@@ -53,7 +53,11 @@
                                     <div class="block block-product-options clearfix">
                                         <div class="bl-modul-cm bl-price">
                                             <p class="title">Giá sản phẩm:</p>
-                                            <p class="des">{!! $detail->is_sale == 1 ? number_format($detail->price_sale ) : number_format($detail->price)  !!}₫</p>
+                                            <p class="des">{!! $detail->is_sale == 1 ? number_format($detail->price_sale ) : number_format($detail->price)  !!}₫
+                                            @if($detail->is_sale)
+                                            <span class="price-old">{{ number_format($detail->price) }}đ</span>
+                                            @endif
+                                            </p>
                                         </div>
                                         <div class="bl-modul-cm bl-color">
                                             <p class="title">Màu sắc sản phẩm:</p>
@@ -182,6 +186,15 @@
         </div><!-- /block-col-right -->
     </div>
 </div><!-- /block_big-title -->
+<style type="text/css">
+    .price-old {
+    color: #999999;
+    text-decoration: line-through;
+    font-size: 13px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+</style>
 @stop
 @section('js')
 <script src="{{ URL::asset('public/assets/lib/jquery.zoom.min.js') }}"></script>

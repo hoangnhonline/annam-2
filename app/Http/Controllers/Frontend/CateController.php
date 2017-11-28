@@ -65,7 +65,17 @@ class CateController extends Controller
         }  
             return view('frontend.cate.parent', compact('parent_id', 'parentDetail', 'cateList', 'productList', 'seo'));
         }else{
-              
+            if($slugCateParent == 'khuyen-mai'){
+            
+                $productList = Product::where('is_sale', 1)
+                    ->where('thumbnail_id', '>', 0)
+                                ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id')
+                                ->select('product_img.image_url', 'product.*')                                                   
+                                ->orderBy('product.id', 'desc')
+                                ->paginate(16);
+                $seo['title'] = $seo['description'] = $seo['keywords'] = "Khuyến mãi";
+                return view('frontend.cate.sale', compact('parent_id', 'productList', 'seo'));
+            }  
              // check cate news
             $page = $request['page'] ? $request['page'] : 1;       
             $cateArr = [];

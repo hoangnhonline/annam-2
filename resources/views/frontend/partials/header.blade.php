@@ -52,8 +52,8 @@
 			<div class="icon">
 				<i class="fa fa-facebook"></i>
 			</div>
-			<div class="fb-inner">
-				<div class="fb-page" data-href="{{ $settingArr['facebook_fanpage'] }}" data-tabs="timeline" data-width="300px" data-height="500px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ $settingArr['facebook_fanpage'] }}" class="fb-xfbml-parse-ignore"><a href="{{ $settingArr['facebook_fanpage'] }}">Facebook</a></blockquote></div>
+			<div class="fb-inner">				
+				<div class="fb-page fb-page1" data-href="{{ $settingArr['facebook_fanpage'] }}" data-small-header="true" data-adapt-container-width="false" data-width="300px" data-height="300px" data-hide-cover="true" data-show-facepile="true" data-show-posts="false" data-tabs="messages"><div class="fb-xfbml-parse-ignore"></div></div>
 			</div>
 		</div>
 	</div><!-- /block-header-bottom -->
