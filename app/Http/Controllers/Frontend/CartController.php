@@ -292,7 +292,7 @@ class CartController extends Controller
         }  
 
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
-        $emailCC = explode(';',$settingArr['email_cc']);
+        $emailCC = explode(',',$settingArr['email_cc']);
 
         $emailArr = array_merge($emailCC, [$email]);
         
