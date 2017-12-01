@@ -734,6 +734,7 @@ select {
   position: relative;
   text-align: center;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .block-categories-hm .item img {
   position: relative;
